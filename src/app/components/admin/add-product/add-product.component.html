@@ -1,0 +1,94 @@
+<div class="wrapper container">
+  <form>
+    <div class="form-group">
+      <label for="name">Product Name:</label>
+      <input type="text" [(ngModel)]="product.name" placeholder="Name" name="name" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Description:</label>
+      <input type="text" [(ngModel)]="product.description" placeholder="Description" name="description"
+        class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Price :</label>
+      <input type="text" [(ngModel)]="product.price" placeholder="Price" name="price" class="form-control" id="price">
+    </div>
+    <div class="form-group">
+      <label for="name">Available In Stock :</label>
+      <input type="text" [(ngModel)]="product.availInStock" placeholder="Available In Stock" name="availInStock"
+        class="form-control" id="availInStock">
+    </div>
+
+
+    <div class="row">
+
+        <div class="form-group " style="text-align: center">
+            <div class="col-md-6">
+              <label for="empId">Colours</label>
+            </div>
+            <div class="col-md-10">
+                <ng-multiselect-dropdown
+                    name="colour"
+                    [placeholder]="'Select Colour'"
+                    [data]="dropColours"
+                    [(ngModel)]="colour.colour"
+                    [disabled]="disabled"
+                    [settings]="dropdownSettings"
+                    (onSelect)="onItemSelect($event)">
+                </ng-multiselect-dropdown>
+            </div>
+          
+  
+          <div class="col-md-6">
+            <label for="empId">Sizes</label>
+          </div>
+          <div class="col-md-10"> 
+            <ng-multiselect-dropdown
+                    name="prodSize"
+                    [placeholder]="'Select Size'"
+                    [data]="dropSizes"
+                    [(ngModel)]="prodSize.prodSize"
+                    [disabled]="disabled"
+                    [settings]="dropdownSettings"
+                    (onSelect)="onItemSelect($event)">
+                </ng-multiselect-dropdown>
+          </div>
+          <div class="form-group col-md-6" style="text-align: center">
+        
+            <div >
+              <label for="empId">Category</label>
+            </div>
+            <div >
+              <select class="form-group" [(ngModel)]="category.name" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let category of categories" value={{category.name}}>{{category.name}}</option>
+              </select>
+            </div>
+            
+              <div >
+                <label for="empId">Sub Category</label>
+              </div>
+              <div >
+                <select class="form-group" [(ngModel)]="subCategory.id" [ngModelOptions]="{standalone: true}">
+                  <option *ngFor="let brand of brands" value={{subCategory.name}}>{{subCategory.name}}</option>
+                </select>
+              </div>
+                
+          </div>
+  
+        </div>
+
+        </div>
+      
+
+
+   
+
+    <div class="form-group">
+      <input type="file"  (change)="getBase64($event)"  multiple>
+    </div>
+    <button class="btn btn-success" (click)="addProduct()">Add Category</button>
+
+
+
+  </form>
+</div>

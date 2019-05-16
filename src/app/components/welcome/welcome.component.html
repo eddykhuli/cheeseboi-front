@@ -1,0 +1,34 @@
+<div style="margin-top:20px">
+    <span style="font-size:30px;cursor:pointer;position:sticky" id="opnbtn" (click)="openNav()">&#9776; open</span>
+  <h1 class="elegantshd">Welcome </h1>
+  
+</div>
+<div id="mySidenav" class="sidenav" >
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+      <!-- <img src="#" class="user-image" alt="User Image" > -->
+      <hr style="color:white"/>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a> 
+</div>
+  <div class="row">
+    <div class="col-md-6 " *ngFor="let product of products;let i = index">
+        <div class="gallery">
+            <a target="_blank" href="product?id={{product.id}}">
+              <img src="data:image/bmp;base64,{{product.images['0'].image}}" alt="Cinque Terre" width="400" height="400">
+            </a>
+            <div class="desc">{{product.name}}</div>
+            <div class="desc">{{product.description}}</div>
+            <div class="desc">Price : R {{product.price}}</div>
+          </div>
+    </div>
+  </div>
+  <h1>Greeting</h1>
+<div [hidden]="authenticated()">
+
+	<!-- <p>The content is {{greeting.content}}</p> -->
+</div>
+<div [hidden]="!authenticated()">
+	<p>Login to see your greeting</p>
+</div>

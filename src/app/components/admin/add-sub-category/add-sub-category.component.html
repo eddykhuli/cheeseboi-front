@@ -1,0 +1,11 @@
+<form [formGroup]="myForm">
+  <ng-multiselect-dropdown
+      name="colour"
+      [placeholder]="'Select Colour'"
+      [data]="dropColours"
+      formControlName="colour"
+      [disabled]="disabled"
+      [settings]="dropdownSettings"
+      (onSelect)="onItemSelect($event)">
+  </ng-multiselect-dropdown>
+</form>

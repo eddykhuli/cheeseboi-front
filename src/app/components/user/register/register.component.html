@@ -1,0 +1,57 @@
+<div class=" container">
+  <h1 style="text-align:center">Register</h1>
+ <div style="margin-left:350px;text-align:center">
+    <form class="col-md-8" style="text-align:center">
+        <div class="form-group"style="text-align:center" >
+          <input  type="text" [(ngModel)]="user.first_name" placeholder="first_name" name="first_name" class="form-control"
+            id="first_name">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="user.last_name" placeholder="last_name" name="last_name" class="form-control"
+            id="last_name">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="user.user_name" placeholder="user_name" name="user_name" class="form-control"
+            id="user_name">
+        </div>
+        <div class="form-group">
+          <input type="email" [(ngModel)]="user.email" placeholder="email" name="email" class="form-control"
+            id="email">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="user.cell_no" placeholder="cell_no" name="cell_no" class="form-control"
+            id="cell_no">
+        </div>
+        <div class="form-group">
+            <input type="text" [(ngModel)]="user.birth_date" placeholder="birth_date" name="birth_date" class="form-control"
+              id="birth_date">
+          </div>
+          <!-- <div class="form-group">
+              <label for="birth_date">Gender :</label>
+              <input type="text" [(ngModel)]="user.gender" placeholder="gender" name="gender" class="form-control"
+                id="gender">
+            </div> -->
+            <div class="form-check-inline">
+              <label class="form-check-label" for="check1">
+                <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>Male
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label" for="check2">
+                <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something">Female
+              </label>
+            </div>
+          
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" [(ngModel)]="user.password" placeholder="password" name="password" class="form-control"
+            id="password">
+        </div>
+        <div class="form-group">
+            <input type="button"  class="form-control "
+              id="btn_reg" value="Register" (click)="registerPerson()" style="background-color:gold"/>
+          </div>
+    
+      </form>
+ </div>
+</div>

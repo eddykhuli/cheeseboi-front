@@ -1,0 +1,65 @@
+<div class="page-wrapper" style="background-color: khaki" >
+    <nav class="navbar-nav navbar-expand-md navbar-dark bg-dark fixed-top navbar-toggleable-md" >
+        <a class="navbar-brand" href="/" style="margin-left:12px">
+          <img src="../assets/cheese.png" style="height:30px;width:30px">
+        </a>
+       <a href="/"><span class="navbar-text">Cheese App</span></a> 
+      
+        <button class="navbar-toggler" type="button"
+                (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+      
+        <div class="collapse navbar-collapse"
+             [ngClass]="{ 'show': navbarOpen }">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"  style="color: darkgoldenrod">About Us</a>
+            
+            </li>
+      
+            <li class="nav-item">
+              <a class="nav-link" href="#"  style="color: darkgoldenrod">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"  style="color: darkgoldenrod">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"  style="color: darkgoldenrod">Cheese Family</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"  style="color: darkgoldenrod">Events</a>
+                  </li>
+                
+          </ul>
+      
+              <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item" style="margin-right:12px">
+                   <a href="#" ><i class="fas fa-cart-arrow-down" style="color:white">34</i></a>  
+                </li>
+                <li class="dropdown nav-item" style="margin-right:12px">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"  style="color: darkgoldenrod" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu"> 
+                        <li class="fa fa-bell-o"><a routerLinkActive="active" routerLink="/login">Sign In</a></li>
+                        <li><a href="register">Sign Up </a><i class="fas fa-sign-in-alt"></i></li>
+                        <li><a href="#">Settings</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" (click)="logout()">Sign Out</a><i class="fas fa-sign-out-alt"></i></li>
+                        
+                    </ul>
+                  </li>
+                </ul>
+       
+        </div>
+      </nav>
+</div>
+<!-- 
+<h1>Greeting</h1>
+<div [hidden]="!authenticated()">
+	<p>The ID is {{greeting.id}}</p>
+	<p>The content is {{greeting.content}}</p>
+</div>
+<div [hidden]="authenticated()">
+	<p>Login to see your greeting</p>
+</div> -->
